@@ -1,17 +1,24 @@
 function toWeirdCase(string) {
   var str = string.toLowerCase().split('');
-  var j = 0;
-  for (var i = 0; i < str.length; i++) {
-    if (str[i] == ' ') {
-      j = 0;
-      continue;
-    }
-    else {
-      if (j % 2 == 0) {
-        str[i] = str[i].toUpperCase();
-      }
-      j++;
+  for (let i = 0; i < words.length; i++) {
+
+    //loop through individual words
+    for (let j = 0; j < words.length; j++) {
+
+      //get first word in words
+      let firstWord = words[0];
+
+      //get first character in first word
+      let firstChar = firstWord[0];
+
+      //Create new word without first character
+      let unshiftedWord = firstWord.unshift(0);
+
+      //move first character to the end
+      let newWord = unshiftedWord.push(firstChar) + "ay";
+
+      return newWord;
+
     }
   }
-  return str.join('');
 }
